@@ -1,0 +1,21 @@
+# BINF_Public Health
+## Download the dataset and upload it on GitHub to create and link for easy access.
+1. Login to server- BL
+2. Navigate to the folder that contains the sequences.
+3. Aim to run fastqc on the files- e.g. rawdata
+
+## What is fastqc ?
+## why run Fastqc ?
+## what is the output expected ?
+``` module load fastqc ```
+```module list```
+###  Run fastqc on one for the zipped folders (you can run it on multiple folders as well)
+```fastqc SRR1635127_1.fastq.gz``` 
+```fastqc SRR1635127_2.fastq.gz```
+
+## Cutadapt 
+### What is cutadapt?
+### Why run cutadapt?
+### What is the output expected ?
+
+```cutadapt -O 3 -G AGATCGGAAGAGC -g AGATCGGAAGAGC -o out_1.fastq -p out_2.fastq SRR1635127_1.fastq.gz SRR1635127_2.fastq.gz ```
