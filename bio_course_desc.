@@ -1,0 +1,48 @@
+Course Title: Introduction to Bioinformatics for NGS Data Analysis
+
+Course Description:
+Are you a bench scientist with a keen interest in NGS data analysis, but limited experience in bioinformatics? Our "Introduction to Bioinformatics for NGS Data Analysis" course is designed for you. This course provides a foundational understanding of bioinformatics and equips you with the skills needed to start analyzing NGS data effectively. Whether you have a reference genome or not, this course will help you get started with fundamental NGS data analysis techniques.
+
+Course Duration: 10 weeks (one semester) 
+
+Prerequisites:
+Basic knowledge of molecular biology and genetics
+Familiarity with command-line interfaces (Linux/Unix)
+Course Outline:
+
+Week 1: Introduction to Bioinformatics
+Overview of Bioinformatics in Public health. 
+Introduction to NGS technologies and data types.
+
+Week 2: Sequence Data Formats
+Understanding FASTQ, SAM, BAM, and VCF formats.
+Quality control and basic data preprocessing.
+
+Week 3: Sequence Alignment with a Reference Genome
+Introduction to sequence alignment algorithms.
+Hands-on: Running alignment using tools like BWA and Bowtie with a reference genome.
+
+Week 4: Variant Calling with a Reference Genome
+Understanding SNPs, indels, and structural variants.
+Variant calling with GATK or Samtools using a reference genome.
+
+Week 5: De Novo Assembly
+Introduction to genome assembly.
+Hands-on assembly using tools like SPAdes or Velvet when a reference genome is not available.
+
+Week 6: Functional Annotation
+Gene prediction and annotation.
+Enrichment analysis and functional classification.
+
+Week 7: Comparative Genomics
+Compare multiple genomes using tools like BLAST or Mauve.
+Identify conserved and unique genes and genomic regions.
+
+Week 8: Metagenomics Analysis
+Introduction to metagenomics.
+Analyze metagenomic data to identify species and functional genes.
+
+Week 9 -10 - back up for anything that might come-up. 
+All above will be done using CLI, and we will train users to use the services and resources that we provide. 
+
+                                                                                                                                                                                 
