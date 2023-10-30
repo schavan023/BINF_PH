@@ -1,0 +1,31 @@
+# Data Alignment
+
+Now we align the trimmed sequences to the reference genome.
+I copied my trimmed sequences to the directory that has the index file (not needed). 
+
+```
+# aligned the trimmed sequences file to reference genome using samtools
+
+bowtie2 -x reference_index -U SRR2621299_trimmed.fastq -S aligned.sam
+# renaming the aligned file so I know or your could change above command 
+mv aligned.sam SRR2621_aligned.sam
+```
+# Convert SAM to BAM
+You can use the samtools view command to convert the SAM file to BAM format, which is a binary, compressed version of the same data. This makes the data more manageable and faster to process.
+```
+samtools view -bS -o SRR2621_aligned.bam SRR2621_aligned.sam
+
+```
+# sort the BAM file
+```
+samtools sort -o SRR2621_sorted_aligned.bam SRR2621_aligned.bam
+
+```
+# Index the Sorted BAM File:
+
+To allow quick access to specific regions in the sorted BAM file, create an index file:
+
+```
+samtools index SRR2621_sorted_aligned.bam
+
+```
