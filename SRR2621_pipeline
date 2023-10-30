@@ -1,0 +1,51 @@
+# Load the required modules
+module load sratoolkit
+module load fastqc
+module load BBMap
+module load multiqc
+module load samtools
+
+# Download and process data
+fastq-dump SRR26212999
+
+# Quality control using FastQC
+fastqc -o srr2621_out SRR26212999.fastq
+
+# Trim the data using BBMap
+bbduk.sh in=SRR26212999.fastq out=SRR2621299_trimmed.fastq ref=adapters ktrim=r k=23 mink=11 hdist=1 tpe tbo minlen=36
+
+# Download a reference genome
+curl -OJX GET "https://api.ncbi.nlm.nih.gov/datasets/v2alpha/genome/accession/GCF_000006945.2/download?include_annotation_type=GENOME_FASTA,GENOME_GFF,RNA_FASTA,CDS_FASTA,PROT_FASTA,SEQUENCE_REPORT&filename=GCF_000006945.2.zip" -H "Accept: application/zip"
+unzip GCF_000006945.2.zip
+
+# Index the reference genome with samtools
+samtools faidx GCF_000006945.2_ASM694v2_genomic.fna
+
+
+# Load the bowtie2 module (if available)
+module load bowtie2
+
+# aligned the trimmed sequences file to reference genome using samtools
+
+bowtie2 -x reference_index -U SRR2621299_trimmed.fastq -S aligned.sam
+# renaming the aligned file so I know or your could change above command 
+mv aligned.sam SRR2621_aligned.sam
+
+# Convert SAM to BAM
+
+samtools view -bS -o SRR2621_aligned.bam SRR2621_aligned.sam
+
+
+# sort the BAM file
+
+samtools sort -o SRR2621_sorted_aligned.bam SRR2621_aligned.bam
+
+# Index the Sorted BAM File:
+samtools index SRR2621_sorted_aligned.bam
+
+
+# Variant Calling
+
+samtools mpileup -uf  GCF_000006945.2_ASM694v2_genomic.fna SRR2621_sorted_aligned.bam > SRR2621_variants.pileup
+
+bcftools mpileup -Ou -f GCF_000006945.2_ASM694v2_genomic.fna SRR2621_sorted_aligned.bam | bcftools call -mv -Ov -o SRR2621_variants.vcf
