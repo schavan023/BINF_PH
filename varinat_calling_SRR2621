@@ -1,0 +1,7 @@
+# # Variant Calling
+
+```
+samtools mpileup -uf  GCF_000006945.2_ASM694v2_genomic.fna SRR2621_sorted_aligned.bam > SRR2621_variants.pileup
+
+
+bcftools mpileup -Ou -f GCF_000006945.2_ASM694v2_genomic.fna SRR2621_sorted_aligned.bam | bcftools call -mv -Ov -o SRR2621_variants.vcf
