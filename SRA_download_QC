@@ -1,0 +1,13 @@
+```
+#download SRA data
+module load sratoolkit
+fastq-dump SRR26212999
+fastqc -o srr262-out SRR26212999.fastq  #make sure you have the output dir created (srr26_out)
+```
+```
+#QC
+module load BBMap
+bbduk.sh in=SRR26212999.fastq out=SRR2621299_trimmed.fastq ref=adapters ktrim=r k=23 mink=11 hdist=1 tpe tbo minlen=36
+module load multiqc
+multiqc .
+```
