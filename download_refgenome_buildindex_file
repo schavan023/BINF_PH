@@ -5,3 +5,14 @@ UCSC Genome Browser: https://hgdownload.soe.ucsc.edu/downloads.html
 Ensembl: https://www.ensembl.org/info/data/ftp/index.html
 NCBI RefSeq: https://www.ncbi.nlm.nih.gov/refseq/
 We will use https://www.ncbi.nlm.nih.gov/datasets/genome/?taxon=59201 used the Assembly (ASM694v2)https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000006945.2/
+## Let's create an index of the reference genome using Bowtie2
+```
+moduel load samtools
+module list
+
+# create the index file using
+samtools faidx GCF_000006945.2_ASM694v2_genomic.fna
+
+# check the file is created correctly
+cat GCF_000006945.2_ASM694v2_genomic.fna.fai
+```
