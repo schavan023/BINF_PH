@@ -1,6 +1,7 @@
 ```
 #download SRA data
 module load sratoolkit
+module load fastqc
 fastq-dump SRR26212999
 fastqc -o srr262-out SRR26212999.fastq  #make sure you have the output dir created (srr26_out)
 ```
