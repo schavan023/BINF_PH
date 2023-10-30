@@ -9,7 +9,7 @@ We will use https://www.ncbi.nlm.nih.gov/datasets/genome/?taxon=59201 used the A
 ```
 # Download a reference genome
 curl -OJX GET "https://api.ncbi.nlm.nih.gov/datasets/v2alpha/genome/accession/GCF_000006945.2/download?include_annotation_type=GENOME_FASTA,GENOME_GFF,RNA_FASTA,CDS_FASTA,PROT_FASTA,SEQUENCE_REPORT&filename=GCF_000006945.2.zip" -H "Accept: application/zip"
-unzip GCF_000006945.2.zip
+unzip GCF_000006945.2.zip 
 
 # Index the reference genome with samtools
 samtools faidx GCF_000006945.2_ASM694v2_genomic.fna
