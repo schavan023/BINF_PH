@@ -1,0 +1,7 @@
+Genome sequence and annotation files can be downloaded from various freely accessible databases as listed below:
+
+GENCODE: https://www.gencodegenes.org
+UCSC Genome Browser: https://hgdownload.soe.ucsc.edu/downloads.html
+Ensembl: https://www.ensembl.org/info/data/ftp/index.html
+NCBI RefSeq: https://www.ncbi.nlm.nih.gov/refseq/
+We will use https://www.ncbi.nlm.nih.gov/datasets/genome/?taxon=59201 used the Assembly (ASM694v2)https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000006945.2/
