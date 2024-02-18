@@ -1,6 +1,6 @@
 # BINF_Public Health
 ## Download the dataset and upload it on GitHub to create and link for easy access.
-1. Login to server- BL
+1. Login to server
 2. Navigate to the folder that contains the sequences.
 3. Aim to run fastqc on the files- e.g. rawdata
 
